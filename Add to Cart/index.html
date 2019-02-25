@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>add chart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <script>
+            var numbers = [];
+            var shirt = [];
+            
+            var cycle = [];
+            function myShirt() {
+                numbers.push(400);
+                shirt.push("1");
+                document.getElementById("allTotal").innerHTML = "Total Price:  "+numbers.reduce(getSum);
+                document.getElementById("countS").innerHTML = "Quantity: "+shirt.length +"<br>Price: "+shirt.length*400;
+            }
+
+            function myCycle() {
+                numbers.push(7000);
+                cycle.push("1");
+                document.getElementById("allTotal").innerHTML = "Total Price:  "+numbers.reduce(getSum);
+                document.getElementById("countC").innerHTML = "Quantity: "+cycle.length+"<br>Price: "+cycle.length*7000;
+            }
+            function getSum(total, num) {
+                return total + num;
+            }
+        </script>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-12 col-m12 re_height">
+                    <h1 style="text-align:center"> Add to Cart with Javascript</h1>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-4 col-m4 header_height contents">
+                    <img src="images/shirt.jpg" alt="shirt">
+                    <p> Product Name: Shirt </p>
+                    <p> Price: 400 TK</p>
+
+                    <p><button class="button" style="vertical-align:middle" onclick="myShirt()"><span>Add To Cart</span></button></p>
+                </div>
+                <div class="col-4 col-m4 header_height contents">
+                    <img src="images/cycle.jpg" alt="cycle">
+                    <p> Product Name: Cycle </p>
+                    <p> Price: 7000 TK</p>
+                    <p><button class="button" style="vertical-align:middle" onclick="myCycle()"> <span>Add To Cart</span> </button></p>
+                </div>
+                
+                
+                
+                <div class="col-4 col-m4 header_height subcon">
+                    <h4 style="text-align: center; padding: 5px;"> Items List </h4><hr>
+                    <br><img src="images/shirt.jpg" alt="shirt">
+                    <p id="countS"> 
+                       
+                        Quantity: 
+                        <br>
+                        Price:
+                    </p> 
+                    <br><img src="images/cycle.jpg" alt="cycle">
+                    <p id="countC">
+                     Quantity: 
+                        <br>
+                        Price:
+                    </p>
+                    <hr>
+                    <h5 id="allTotal" style="padding: 2px 30px;">
+                    Total Price:  
+                    </h5>
+                </div>
+                
+                
+            </div> 
+        </div>
+    </body>
+</html>
